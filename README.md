@@ -1,1 +1,3 @@
 # reminder-app
+
+# Getting Started
