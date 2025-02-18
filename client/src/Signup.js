@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [email, setEmail]   = useState('');
+  const [password, setPassword] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,44 +30,38 @@ const Signup = () => {
       setMessage('Registration failed. Please try again.');
     }
   };
-
   return (
-    <div>
-      <h2>Sign Up</h2>
-      {message && <p>{message}</p>}
-      <button onClick={() => navigate('/')}>Back</button>
+    <div className="card">
+      <h2>Create an Account</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label><br />
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email:</label><br />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label><br />
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
+        <label>Username</label>
+        <input 
+          type="text" 
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter your username"
+          required 
+        />
+
+        <label>Email</label>
+        <input 
+          type="email" 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+          required 
+        />
+
+        <label>Password</label>
+        <input 
+          type="password" 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password"
+          required 
+        />
+
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );

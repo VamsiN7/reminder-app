@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem('user', JSON.stringify(user));
 
       // Check if profile details are missing. For demo, we check if graduationDate is missing.
-      if (!user.graduationDate) {
+      if (!user.graduationdate) {
         navigate('/profile');
       } else {
         navigate('/');
@@ -37,10 +37,9 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="card">
       <h2>Login</h2>
       {message && <p>{message}</p>}
-      <button onClick={() => navigate('/')}>Back</button>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label><br />

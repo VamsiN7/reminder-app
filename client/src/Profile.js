@@ -46,7 +46,7 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className="card profile-container">
       <h2>Complete Your Profile</h2>
       {message && <p>{message}</p>}
       <button onClick={() => navigate('/')}>Back</button>

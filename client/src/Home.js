@@ -1,15 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React from 'react';
 
-const Home = () => {
-    return (
-        <div>
-            <h1>Welcome to the Graduation Reminder App</h1>
-            <p>Please sign up or log in.</p>
-            <nav>
-                <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
-            </nav>
-        </div>
-    );
-
+function Home() {
+  return (
+    <div className="card">
+      <h2>Welcome to the Home Page</h2>
+      <p>
+        Coming soon! 
+      </p>
+    </div>
+  );
 }
+
 export default Home;

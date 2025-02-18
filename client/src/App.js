@@ -1,23 +1,32 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Signup from './Signup';
-import Login from './Login';
+import './App.css';
 import Home from './Home';
+import Login from './Login';
+import Signup from './Signup';
 import Profile from './Profile';
 
 function App() {
   return (
     <Router>
-      <div style={{ padding: '20px' }}>
-        {/* <nav>
-          <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
-        </nav> */}
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/" element={<Home />} />
-        </Routes>
+      <div className="App">
+        <nav className="navbar">
+          <Link to="/" className="navbar-brand">Reminder App</Link>
+          <ul className="nav-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
+          </ul>
+        </nav>
+
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
