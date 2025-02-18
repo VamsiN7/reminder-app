@@ -1,3 +1,4 @@
+// backend/models/User.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
@@ -22,7 +23,8 @@ const User = sequelize.define('User', {
   },
   graduationDate: { 
     type: DataTypes.DATEONLY, 
-    allowNull: true 
+    allowNull: true,
+    field: 'graduationdate'  // maps to the actual column in DB
   },
   phone: { 
     type: DataTypes.STRING, 
@@ -30,11 +32,13 @@ const User = sequelize.define('User', {
   },
   notifyEmail: { 
     type: DataTypes.BOOLEAN, 
-    defaultValue: false 
+    defaultValue: false,
+    field: 'notifyemail'  // maps to the actual column in DB
   },
   notifySMS: { 
     type: DataTypes.BOOLEAN, 
-    defaultValue: false 
+    defaultValue: false,
+    field: 'notifysms'  // maps to the actual column in DB
   }
 }, {
   tableName: 'users',

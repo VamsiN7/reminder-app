@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -5,9 +6,11 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const sequelize = require('./config/database');
-const User = require('./models/User');
+const User = require('./models/user');
 const app = express();
 const port = process.env.PORT || 3000;
+
+const getSequelizeInstance = require('./config/database');
 
 // Middleware
 app.use(cors());
@@ -32,7 +35,6 @@ app.post('/api/register', async (req, res) => {
       return res.status(400).json({ message: 'User already exists' });
     }
     const hashedPassword = await bcrypt.hash(password, saltRounds);
-    // Create user with extra fields initialized to default values
     const newUser = await User.create({
       name,
       email,
