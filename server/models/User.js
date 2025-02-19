@@ -35,6 +35,11 @@ const User = sequelize.define('User', {
     defaultValue: false,
     field: 'notifyemail'  // maps to the actual column in DB
   },
+  goal: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    field: 'goal'
+  },
   notifySMS: { 
     type: DataTypes.BOOLEAN, 
     defaultValue: false,
