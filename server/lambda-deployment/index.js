@@ -100,7 +100,7 @@ exports.handler = async (event) => {
           Your graduation is in ${diffDays} days!
           Keep pushing forward and don’t lose sight of your goals.
 
-          "${aiMessage}"
+          ${aiMessage}
         `;
 
         await sendEmail(user.email, emailBody);
